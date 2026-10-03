@@ -1,0 +1,6 @@
+{
+  "name": "Sistema de Gestión Documental y Trazabilidad Linux",
+  "description": "Gestor documental sin OCR para Linux con control estricto de versiones, trazabilidad inmutable y auditoría de ciclo de vida.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
