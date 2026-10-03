@@ -1,16 +1,16 @@
 import React, { useState, useMemo } from 'react';
 import { useDocumentSystem } from '../context/DocumentContext';
 import { DocumentRecord } from '../types/document';
-import { 
-  Search, 
-  X, 
-  FileText, 
-  History, 
-  Download, 
-  Trash2, 
-  Eye, 
-  Layers, 
-  Plus, 
+import {
+  Search,
+  X,
+  FileText,
+  History,
+  Download,
+  Trash2,
+  Eye,
+  Layers,
+  Plus,
   UploadCloud,
   CheckCircle2,
   Lock,
@@ -121,10 +121,10 @@ export const DocumentList: React.FC<DocumentListProps> = ({
 
   return (
     <div className="space-y-6">
-      
+
       {/* Friendly Welcome & Quick Stat Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        
+
         {/* Card 1: Total Docs */}
         <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-xs flex items-center gap-3.5">
           <div className="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
@@ -175,10 +175,10 @@ export const DocumentList: React.FC<DocumentListProps> = ({
 
       {/* Main Content Card */}
       <div className="bg-white border border-slate-200/80 rounded-2xl shadow-xs overflow-hidden">
-        
+
         {/* Search & Actions Bar */}
         <div className="p-4 sm:p-5 border-b border-slate-200/80 space-y-4">
-          
+
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
               <h2 className="text-base font-bold text-slate-900">
@@ -214,14 +214,14 @@ export const DocumentList: React.FC<DocumentListProps> = ({
 
           {/* Search Input & Dropdowns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
-            
+
             <div className="lg:col-span-2 relative">
               <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Escribe para buscar (ej. contrato, factura, Dr. Pérez, paciente, motor...)"
+                placeholder="Escribe para buscar (ej. contrato, factura, Ing. Pérez, paciente, motor...)"
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg pl-10 pr-10 py-2.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:bg-white transition-colors"
               />
               {searchTerm && (
@@ -364,20 +364,18 @@ export const DocumentList: React.FC<DocumentListProps> = ({
 
                       {/* Status */}
                       <td className="py-3.5 px-4 whitespace-nowrap">
-                        <span className={`inline-flex items-center gap-1.5 font-semibold text-xs ${
-                          doc.metadata.status === 'Vigente' || doc.metadata.status === 'Aprobado'
+                        <span className={`inline-flex items-center gap-1.5 font-semibold text-xs ${doc.metadata.status === 'Vigente' || doc.metadata.status === 'Aprobado'
                             ? 'text-emerald-700'
                             : doc.metadata.status === 'En revisión' || doc.metadata.status === 'Observado'
-                            ? 'text-amber-700'
-                            : 'text-slate-600'
-                        }`}>
-                          <span className={`w-1.5 h-1.5 rounded-full ${
-                            doc.metadata.status === 'Vigente' || doc.metadata.status === 'Aprobado'
+                              ? 'text-amber-700'
+                              : 'text-slate-600'
+                          }`}>
+                          <span className={`w-1.5 h-1.5 rounded-full ${doc.metadata.status === 'Vigente' || doc.metadata.status === 'Aprobado'
                               ? 'bg-emerald-500'
                               : doc.metadata.status === 'En revisión' || doc.metadata.status === 'Observado'
-                              ? 'bg-amber-500'
-                              : 'bg-slate-400'
-                          }`} />
+                                ? 'bg-amber-500'
+                                : 'bg-slate-400'
+                            }`} />
                           {doc.metadata.status}
                         </span>
                       </td>
@@ -391,7 +389,7 @@ export const DocumentList: React.FC<DocumentListProps> = ({
                       {/* Actions */}
                       <td className="py-3.5 px-4 whitespace-nowrap text-right">
                         <div className="flex items-center justify-end gap-1">
-                          
+
                           {/* Historial / Quién lo vio */}
                           <button
                             onClick={(e) => handleTraceClick(e, doc)}
